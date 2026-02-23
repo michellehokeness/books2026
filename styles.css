@@ -1,0 +1,220 @@
+:root {
+  --bg: #111216;
+  --bg-soft: #1a1d23;
+  --panel: #20242d;
+  --shelf: #3f2a1f;
+  --accent: #bb8b42;
+  --accent-soft: #d4a35d;
+  --text: #f2efe9;
+  --text-soft: #b9c1cf;
+  --ok: #77c27e;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, #2b313d 0%, var(--bg) 50%);
+  min-height: 100vh;
+}
+
+.texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: repeating-linear-gradient(
+    120deg,
+    transparent 0,
+    transparent 18px,
+    rgba(255, 255, 255, 0.03) 18px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+}
+
+.layout {
+  width: min(980px, calc(100vw - 2rem));
+  margin: 2rem auto 3rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(187, 139, 66, 0.12), rgba(26, 29, 35, 0.9));
+  border: 1px solid rgba(212, 163, 93, 0.25);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-soft);
+  font-weight: 700;
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Cinzel", serif;
+}
+
+h1 {
+  margin: 0.45rem 0 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.shelf-panel,
+.details {
+  border-radius: 16px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.shelf-panel {
+  background: linear-gradient(180deg, #5e402a 0%, var(--shelf) 15%, #2f1f16 100%);
+  padding: 1rem;
+  border: 1px solid rgba(212, 163, 93, 0.28);
+}
+
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.7rem;
+  align-items: end;
+}
+
+.book-spine {
+  appearance: none;
+  border: none;
+  text-align: left;
+  min-height: 190px;
+  border-radius: 8px 8px 4px 4px;
+  padding: 0.75rem 0.55rem;
+  cursor: pointer;
+  color: #f7f4ef;
+  background: linear-gradient(180deg, #374455 0%, #243243 100%);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid rgba(0, 0, 0, 0.35);
+  transform: translateY(0);
+  transition: transform 180ms ease, box-shadow 180ms ease, outline-color 180ms ease;
+}
+
+.book-spine:hover,
+.book-spine:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.4);
+}
+
+.book-spine.is-active {
+  outline: 2px solid var(--accent-soft);
+  transform: translateY(-8px);
+}
+
+.book-spine.is-read {
+  background: linear-gradient(180deg, #35503d 0%, #243c2c 100%);
+}
+
+.spine-title {
+  display: block;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.spine-author {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  color: #d9e2f0;
+}
+
+.read-chip {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.76rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 0.16rem 0.5rem;
+}
+
+.details {
+  background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+  border: 1px solid rgba(212, 163, 93, 0.2);
+  padding: 1.2rem;
+}
+
+.meta-line {
+  margin: 0;
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0.4rem 0;
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+}
+
+.author {
+  margin: 0 0 0.95rem;
+  color: var(--text-soft);
+}
+
+.details p {
+  margin: 0.6rem 0;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+button,
+.actions a {
+  font: inherit;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-weight: 700;
+}
+
+#read-toggle {
+  border: 1px solid rgba(212, 163, 93, 0.5);
+  background: rgba(212, 163, 93, 0.1);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.actions a {
+  text-decoration: none;
+  color: #121212;
+  background: var(--accent-soft);
+}
+
+#read-toggle.is-read {
+  color: #0f2713;
+  background: var(--ok);
+  border-color: rgba(119, 194, 126, 0.7);
+}
+
+@media (max-width: 640px) {
+  .layout {
+    width: min(980px, calc(100vw - 1rem));
+    margin-top: 1rem;
+  }
+
+  .book-spine {
+    min-height: 160px;
+  }
+}
