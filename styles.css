@@ -52,12 +52,11 @@ body {
   box-shadow: 0 10px 24px var(--shadow);
 }
 
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent-soft);
-  font-weight: 700;
-  margin: 0;
+.site-logo {
+  width: min(320px, 100%);
+  height: auto;
+  display: block;
+  margin-bottom: 0.8rem;
 }
 
 h1,

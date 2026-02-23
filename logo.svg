@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 88" role="img" aria-label="My Bookshelf logo">
+  <defs>
+    <linearGradient id="logo-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f28" />
+      <stop offset="100%" stop-color="#0f1319" />
+    </linearGradient>
+    <linearGradient id="logo-book" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d2a463" />
+      <stop offset="100%" stop-color="#9f6f2e" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(4 4)">
+    <rect x="0" y="0" width="80" height="80" rx="18" fill="url(#logo-bg)" />
+    <rect x="17" y="16" width="12" height="47" rx="2" fill="#2e3c4f" />
+    <rect x="32" y="12" width="14" height="51" rx="2" fill="url(#logo-book)" />
+    <rect x="49" y="18" width="10" height="45" rx="2" fill="#3e4f66" />
+    <rect x="14" y="64" width="48" height="5" rx="2" fill="#e8dbc6" opacity="0.95" />
+  </g>
+
+  <g fill="#f2efe9">
+    <text x="98" y="39" font-size="26" font-family="Cinzel, Georgia, serif" font-weight="700">My Bookshelf</text>
+    <text x="99" y="62" font-size="16" font-family="Source Sans 3, Arial, sans-serif" fill="#d4a35d" letter-spacing="1.6">FOR 2026</text>
+  </g>
+</svg>
