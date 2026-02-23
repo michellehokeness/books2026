@@ -58,6 +58,19 @@ const BOOKS = [
     whyRead:
       "Inventive prose and philosophical depth make it a sophisticated pick with strong voice.",
     source: "https://www.penguinrandomhouse.com/books/704130/martyr-by-kaveh-akbar/"
+  },
+  {
+    id: "demon-copperhead",
+    title: "Demon Copperhead",
+    author: "Barbara Kingsolver",
+    year: 2022,
+    genre: "Literary Fiction",
+    summary:
+      "A modern Appalachian retelling of Dickens that follows a resilient boy through poverty, addiction, and the struggle to define his own future.",
+    whyRead:
+      "It is immersive, socially sharp, and gives the list another heavyweight novel with strong emotional depth.",
+    source:
+      "https://www.harpercollins.com/products/demon-copperhead-barbara-kingsolver"
   }
 ];
 
